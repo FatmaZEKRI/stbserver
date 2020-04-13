@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>help</title>
+<link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+
+	<h1 align="center">Projet Service REST STB</h1>
+	<h3>La liste des opérations gérées par le service REST</h3>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">URL</th>
+				<th scope="col">Méthode attendue</th>
+				<th scope="col">Opération</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<th scope="row">1</th>
+				<td>/</td>
+				<td>GET</td>
+				<td>Afficher la page d’accueil du projet</td>
+			</tr>
+			<tr>
+			<th scope="row">2</th>
+				<td>/help</td>
+				<td>GET</td>
+				<td>Afficher la liste des opérations gérées par le service REST
+				</td>
+			</tr>
+			<tr><th scope="row">3</th>
+				<td>/resume</td>
+				<td>GET ou POST</td>
+				<td>Retourner la liste des résumés des STB présentes dans la
+					base</td>
+			</tr>
+			<tr><th scope="row">4</th>
+				<td>/stb?id={id}</td>
+				<td>GET</td>
+
+				<td>Retourne le contenu complet de la STB dont l’identifiant
+					est {id}</td>
+			</tr>
+			<tr>
+			<th scope="row">5</th>
+				<td>/htmlstb?id={id}</td>
+				<td>GET</td>
+
+				<td>Retourne le contenu complet de la STB dont l’identifiant
+					est {id}</td>
+			</tr>
+			<tr>
+			<th scope="row">6</th>
+				<td>/insert</td>
+				<td>PUT</td>
+				<td>Ajouter une STB dans la base</td>
+			</tr>
+			<tr>
+			<th scope="row">7</th>
+				<td>/delete?id={id}</td>
+				<td>DELETE</td>
+				<td>Suppression de la STB dont l’identifiant est {id}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

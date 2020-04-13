@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "eba50b35-28f0-4aaf-9cfb-d0a07e72edbd",
+		"name": "STB20_ZEKRI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Page d’accueil",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/html",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				},
+				"description": "Affiche la page d’accueil"
+			},
+			"response": [
+				{
+					"name": "Page d’accueil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "text/html",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=UTF-8"
+						},
+						{
+							"key": "Content-Language",
+							"value": "fr-FR"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 Apr 2020 14:56:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\"/>\n        <title>Service REST</title>\n    </head>\n    <body>\n        <img src=\"resources/images/universite-rouen.jpg\" alt=\"Université de Rouen\" class=\"rounded\"/>\n        <h1 align=\"center\">Service REST </h1>\n        <h2>Vesrion: 1 </h2>\n        <h2>Auteur : Fatma HAMRIT ZEKRI </h2>\n        <h2>Univérisite de Rouen </h2>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "help",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/html",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/help",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"help"
+					]
+				},
+				"description": "Affiche la page contenant les informations d’aide"
+			},
+			"response": []
+		},
+		{
+			"name": "insert",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<stb>\n  <title>Service REST</title>\n  <version>0.1</version>\n  <date>2012-12-12 T12:12:12:00Z</date>\n  <description>Projet:Langage WEB 2</description>\n  <client>\n    <entity>Université de Rouen </entity>\n    <firstname>M. et M.</firstname>\n    <lastname>M. et M.</lastname>\n    <mail>addresse@gmail.com</mail>\n    <tel>0606060606</tel>\n  </client>\n <team>\n    <person>\n      <firstname firstname=\"fatma\" gender=\"Mme\" lastname=\"zekri\" mail=\"zekri.fatma@gmail.com\"/>\n      <function>Étudiante M1</function>\n    </person>\n <person>\n      <firstname firstname=\"fatma\" gender=\"Mme\" lastname=\"zekri\" mail=\"zekri.fatma@gmail.com\"/>\n      <function>Étudiante M1</function>\n    </person>\n  </team>\n  <detail>\n    <feature name=\"Exigence1\" number=\"1\" section=\"1\">\n      <descritpion>concevoir un service RESTfull </descritpion>\n      <priority>1</priority>\n    </feature>\n<feature name=\"Exigence2\" number=\"2\" section=\"2\">\n      <descritpion>Flux XML conforme au schéma XSD d'une STB</descritpion>\n      <priority>1</priority>\n    </feature>\n<feature name=\"Exigence3\" number=\"3\" section=\"3\">\n      <descritpion>Gestion de la persistance des données</descritpion>\n      <priority>1</priority>\n    </feature>\n  </detail>\n</stb>"
+				},
+				"url": {
+					"raw": "http://localhost:8080/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"insert"
+					]
+				},
+				"description": " Ajout d’une STB dans la base"
+			},
+			"response": []
+		},
+		{
+			"name": "resume",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/resume",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"resume"
+					]
+				},
+				"description": "Liste des STB"
+			},
+			"response": []
+		},
+		{
+			"name": "resumePOST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/resume",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"resume"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detailStbXML",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/stb?id=52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stb"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "52"
+						}
+					]
+				},
+				"description": "Détail d’une STB "
+			},
+			"response": []
+		},
+		{
+			"name": "detailStnHTML",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/html",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/htmlstb?id=52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"htmlstb"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "52"
+						}
+					]
+				},
+				"description": "detail d'une STB"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/delete?id=28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "28"
+						}
+					]
+				},
+				"description": "Suppression d'un stb"
+			},
+			"response": []
+		}
+	]
+}

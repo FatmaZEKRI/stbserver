@@ -1,4 +1,4 @@
-package model;
+package fr.univ.rouen.stbserver.model;
 
 import java.io.BufferedReader;
 import java.io.IOException;

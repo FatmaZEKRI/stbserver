@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>STB</title>
+<link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<h3 align="center">Les information de la STB</h3>
+	<div class="center">
+		<table class="table table-bordered">
+			<tr>
+				<td>Titre:</td>
+				<td th:text="${stb.title}"></td>
+			</tr>
+			<tr>
+				<td>Version:</td>
+				<td th:text="${stb.version}"></td>
+			</tr>
+			<tr>
+				<td>Date:</td>
+				<td th:text="${stb.date}"></td>
+			</tr>
+			<tr>
+				<td>Descritpion:</td>
+				<td th:text="${stb.description}"></td>
+			</tr>
+			<tr>
+				<td>Client:</td>
+
+				<td>
+					<ul>
+						<li>Entity: 
+						<i th:text="${stb.client.entity}"></i>
+						</li>
+						<li>FirstName: 
+						<i th:text="${stb.client.firstname}"></i>
+						</li>
+						<li>LastName: 
+						<i th:text="${stb.client.lastname}"></i>
+						</li>
+						<li>mail: 
+						<i th:text="${stb.client.mail}"></i>
+						</li>
+						<li>Téléphone: 
+						<i th:text="${stb.client.telephone}"></i>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Team:</td>
+				<td>
+				<div th:each="p , i :${stb.team.persons}">
+				<ul>Person <i th:text="${i.count}"></i>
+				<li> FirstName: <i th:text="${p.firstname.firstname}"></i></li>
+				<li> LasName: <i th:text="${p.firstname.lastname}"></i></li>
+				<li> Adresse mail: <i th:text="${p.firstname.mail}"></i></li>
+				<li> Function: <i th:text="${p.fonction}"></i></li>
+				</ul>
+				</div>
+				</td>
+			</tr>
+			<tr>
+			<td>Detail</td>
+			<td>
+			<div th:each="f, i:${stb.detail.getFeatures()}">
+			<ul>Feature <i th:text="${i.count}"></i>
+			<li>Description: <i th:text="${f.description}"></i></li>
+			<li>priority: <i th:text="${f.priority}"></i></li>
+			<li>delivery: <i th:text="${f.delivery}"></i></li>
+			</ul>
+			</div>	
+			</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

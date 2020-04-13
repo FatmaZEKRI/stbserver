@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="title" type="string128" />
+	<xs:element name="version" type="xs:decimal" default="0.1" />
+	<xs:element name="date" type="daate" />
+	<xs:element name="description" type="string128" />
+	<xs:element name="client">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="entity" type="string32" minOccurs="1"
+					maxOccurs="1" />
+				<xs:element name="firstname" type="string32"
+					minOccurs="1" maxOccurs="1" />
+				<xs:element name="lastname" type="string32" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element name="mail" type="mail" />
+				<xs:element name="tel" type="tel" minOccurs="1" maxOccurs="10"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="team">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="person" minOccurs="2" maxOccurs="8">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="firstname" minOccurs="1"
+								maxOccurs="1">
+								
+								<xs:complexType>
+								<xs:attribute name="firstname" type="string32" />
+									<xs:attribute name="gender">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="M." />
+												<xs:enumeration value="Mme" />
+												<xs:enumeration value="Miss" />
+												<xs:enumeration value="Mrs" />
+												<xs:enumeration value="Mr" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="lastname" type="string32" />
+									<xs:attribute name="mail" type="mail" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="function" minOccurs="1"
+								type="string32" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="detail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="feature" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="descritpion" type="string128"
+								minOccurs="1" maxOccurs="1" />
+							<xs:element name="priority" type="int" minOccurs="1"
+								maxOccurs="1" />
+							<xs:element name="delivery" type="daate" minOccurs="0"
+								maxOccurs="1" />
+						</xs:sequence>
+						<xs:attribute name="name" type="string32" />
+						<xs:attribute name="section" type="xs:integer" />
+						<xs:attribute name="number" type="xs:integer" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="stb">
+		<xs:complexType>
+		
+			<xs:sequence>
+				<xs:element ref="title" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="version" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="date" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="description" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="client" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="team" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="detail" minOccurs="1" maxOccurs="1" />
+				
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:integer" />
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="mail">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="[A-Za-z0-9\.,:;~()]+@[A-Za-z0-9\.,:;~()]+.[A-Za-z]+" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="textType128">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="128" />
+			<xs:pattern value="[A-Za-z0-9\s/\+]+" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string128">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="128"></xs:maxLength>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="int">
+		<xs:restriction base="xs:int">
+			<xs:pattern value="[0-9]" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string32">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="32"></xs:maxLength>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tel">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]+" />
+
+			<xs:maxLength value="10"></xs:maxLength>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="daate">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="\d{4}-\d{2}-\d{2}\s?[Tt]?[0-2][0-9]:[0-5][0-9]:[0-5][0-9]:[0-9][0-9][Zz]?" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

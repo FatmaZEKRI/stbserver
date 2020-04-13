@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stb>
+  <title>Projet SIGMA</title>
+  <version>0.1</version>
+  <date>2012-12-12 T12:12:12:00Z</date>
+  <description>Systéme Informatique de Gestion et management d'achat</description>
+  <client>
+    <entity>Mairie de Rouen </entity>
+    <firstname>DUGAS</firstname>
+    <lastname>Hubert</lastname>
+    <mail>Hubert.Hubert@gmail.com</mail>
+    <tel>0606060606</tel>
+  </client>
+ <team>
+    <person>
+      <firstname firstname="fatma" gender="Miss" lastname="zekri" mail="zekri.fatma@gmail.com"/>
+      <function>Responsable technique</function>
+    </person>
+    <person>
+      <firstname firstname="julia" gender="Miss" lastname="Julia" mail="julia.julia@gmail.com"/>
+      <function>Responsable Développement</function>
+    </person>
+<person>
+      <firstname firstname="Mina" gender="Miss" lastname="Houre" mail="mina.mina@gmail.com"/>
+      <function>Responsable Qualité</function>
+    </person>
+  </team>
+  <detail>
+    <feature name="Exigence1" number="1" section="1">
+      <descritpion>Gestion des utilisateurs </descritpion>
+      <priority>1</priority>
+    </feature>
+<feature name="Exigence2" number="2" section="2">
+      <descritpion>Gestion des logos </descritpion>
+      <priority>1</priority>
+    </feature>
+  </detail>
+</stb>
